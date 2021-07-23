@@ -35,6 +35,7 @@ steps:
         path: /root/.ssh
 
   - name: "gcr.io/$PROJECT_ID/kustomize"
+    dir: "kujilabo-manifests/overlays/develop"
     args:
       - "edit"
       - "set"
