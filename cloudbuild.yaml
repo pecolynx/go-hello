@@ -40,6 +40,11 @@ steps:
       - "set"
       - "image"
       - "gcr.io/cocotola/go-hello=gcr.io/$PROJECT_ID/go-hello:$SHORT_SHA"
+    env:
+      - "APPLY=false"
+      - "CLOUDSDK_COMPUTE_ZONE=asia-northeast1-a"
+      - "CLOUDSDK_CONTAINER_CLUSTER=k8s-cluster"
+      - "GCLOUD_PROJECT=cocotola"
 
 availableSecrets:
   secretManager:
