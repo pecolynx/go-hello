@@ -34,6 +34,14 @@ steps:
       - name: "ssh"
         path: /root/.ssh
 
+  - name: "gcr.io/cloud-builders/git"
+    dir: "kujilabo-manifests/overlays/develop"
+    entrypoint: "bash"
+    args:
+      - -c
+      - |
+        ls
+
   - name: "gcr.io/$PROJECT_ID/kustomize"
     dir: "kujilabo-manifests/overlays/develop"
     args:
