@@ -35,6 +35,11 @@ steps:
         path: /root/.ssh
 
   - name: "gcr.io/cloud-builders/git"
+    args:
+      - checkout
+      - master
+
+  - name: "gcr.io/cloud-builders/git"
     entrypoint: "bash"
     args:
       - -c
