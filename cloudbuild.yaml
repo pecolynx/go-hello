@@ -35,6 +35,13 @@ steps:
         path: /root/.ssh
 
   - name: "gcr.io/cloud-builders/git"
+    entrypoint: "bash"
+    args:
+      - -c
+      - |
+        ls
+
+  - name: "gcr.io/cloud-builders/git"
     dir: "kujilabo-manifests/overlays/develop"
     entrypoint: "bash"
     args:
