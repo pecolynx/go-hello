@@ -68,6 +68,19 @@ steps:
       - "CLOUDSDK_CONTAINER_CLUSTER=k8s-cluster"
       - "GCLOUD_PROJECT=cocotola"
 
+  - name: "gcr.io/cloud-builders/git"
+    dir: "kujilabo-manifests"
+    args:
+      - add
+      - .
+
+  - name: "gcr.io/cloud-builders/git"
+    dir: "kujilabo-manifests"
+    args:
+      - push
+      - origin
+      - master
+
 availableSecrets:
   secretManager:
     - versionName: projects/$PROJECT_ID/secrets/go-hello-secret/versions/latest
