@@ -48,7 +48,7 @@ steps:
         ls
 
   - name: "gcr.io/cloud-builders/git"
-    dir: "kujilabo-manifests"
+    dir: "kujilabo-manifests/go-hello/overlays/develop"
     entrypoint: "bash"
     args:
       - -c
@@ -56,7 +56,7 @@ steps:
         ls
 
   - name: "gcr.io/$PROJECT_ID/kustomize"
-    dir: "kujilabo-manifests/overlays/develop"
+    dir: "kujilabo-manifests/go-hello/overlays/develop"
     args:
       - "edit"
       - "set"
