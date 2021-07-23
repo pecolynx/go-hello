@@ -26,6 +26,15 @@ steps:
         path: /root/.ssh
 
   - name: "gcr.io/cloud-builders/git"
+    secretEnv: ["SSH_KEY"]
+    entrypoint: "bash"
+    args:
+      - -c
+      - |
+        git config --global user.email "cloudbuild@kujilabo.com"
+        git config --global user.email "cloudbuild"
+
+  - name: "gcr.io/cloud-builders/git"
     args:
       - clone
       - --recurse-submodules
