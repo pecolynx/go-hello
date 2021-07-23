@@ -10,7 +10,7 @@ steps:
     id: Push
     args:
       - "push"
-      - "gcr.io/$PROJECT_IDgo-hello:$SHORT_SHA"
+      - "gcr.io/$PROJECT_ID/go-hello:$SHORT_SHA"
 
 images:
   - "gcr.io/$PROJECT_ID/go-hello"
