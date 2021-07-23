@@ -25,7 +25,6 @@ steps:
       - name: "ssh"
         path: /root/.ssh
 
-  # Clone the repository
   - name: "gcr.io/cloud-builders/git"
     args:
       - clone
@@ -34,6 +33,13 @@ steps:
     volumes:
       - name: "ssh"
         path: /root/.ssh
+
+  - name: "gcr.io/$PROJECT_ID/kustomize"
+    args:
+      - "edit"
+      - "set"
+      - "image"
+      - "gcr.io/cocotola/go-hello=gcr.io/$PROJECT_ID/go-hello:$SHORT_SHA"
 
 availableSecrets:
   secretManager:
