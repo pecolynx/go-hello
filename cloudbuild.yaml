@@ -77,6 +77,13 @@ steps:
   - name: "gcr.io/cloud-builders/git"
     dir: "kujilabo-manifests"
     args:
+      - commit
+      - -m
+      - "Update $SHORT_SHA"
+
+  - name: "gcr.io/cloud-builders/git"
+    dir: "kujilabo-manifests"
+    args:
       - push
       - origin
       - master
