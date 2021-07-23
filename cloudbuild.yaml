@@ -4,7 +4,13 @@ steps:
     args: ["build", "-o", "app"]
 
   - name: "gcr.io/cloud-builders/docker"
-    args: ["build", "-t", "gcr.io/$PROJECT_ID/go-hello:$REVISION_ID", "."]
+    args: ["build", "-t", "gcr.io/$PROJECT_ID/go-hello:$SHORT_SHA", "."]
+
+  - name: "gcr.io/cloud-builders/docker"
+    id: Push
+    args:
+      - "push"
+      - "gcr.io/$PROJECT_IDgo-hello:$SHORT_SHA"
 
 images:
   - "gcr.io/$PROJECT_ID/go-hello"
