@@ -80,6 +80,9 @@ steps:
       - push
       - origin
       - master
+    volumes:
+      - name: "ssh"
+        path: /root/.ssh
 
 availableSecrets:
   secretManager:
