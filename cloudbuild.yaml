@@ -42,7 +42,7 @@ steps:
         ls
 
   - name: "gcr.io/cloud-builders/git"
-    dir: "kujilabo-manifests/go-hello/overlays/develop"
+    dir: "kujilabo-manifests"
     entrypoint: "bash"
     args:
       - -c
